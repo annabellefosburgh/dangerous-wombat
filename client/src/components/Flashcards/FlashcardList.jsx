@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function FlashcardList() {
+export default function FlashcardList({ flashcards }) {
     return (
         <div>
-            
+
         </div>
     )
 }
