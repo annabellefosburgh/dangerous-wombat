@@ -1,0 +1,65 @@
+/* Styling the body */
+body {
+    background-color: white;
+}
+
+/* Flashcard styling */
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: .25rem;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
+    background-color: white;
+    transform-style: preserve-3d;
+    height: 150px;
+    width: 150px;
+    transition: 150ms;
+    cursor: pointer;
+    /* Define the 3D transformation */
+    transform: perspective(1000px) rotateY(var(--rotate-y, 0))
+    translateY(var(--translate-y,0));
+}
+
+.card:hover {
+    --translate-y: -2px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+}
+
+.card.flip {
+    /* Rotate the card 180 degrees on the Y-axis for the flip effect */
+    --rotate-y: 180deg;
+}
+
+.card .front,
+.card .back {
+    /* Position the content absolutely within the card */
+    position: absolute;
+    padding: 1rem;
+    /* Hide the backface of the card during transitions */
+    backface-visibility: hidden;
+}
+
+/* Styling for the back side of the card */
+.card .back {
+    /* Rotate the back side to show when the card is flipped */
+    transform: rotateY(180deg);
+}
+
+.flashcard-options {
+    /* Add some margin to the options container */
+    margin-top: .5rem;
+}
+
+.flashcard-option {
+    /* Add margin to separate options and set font color and size */
+    margin-top: .25rem;
+    color: gray;
+    font-size: .75rem;
+}
+
+.flashcard-option:first-child {
+    /* Remove the top margin for the first option */
+    margin-top: 0;
+}
