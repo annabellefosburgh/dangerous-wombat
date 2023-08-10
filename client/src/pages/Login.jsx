@@ -41,6 +41,51 @@ const Login = (props) => {
         password: '',
       });
     }
-};
 
-//Return html? render homepage?
+    return (
+      <main className="max-w-lg mx-auto bg-parchment shadow-md">
+          <div className="card">
+            <h4 className="card-header text-vandyke font-trirong">Login</h4>
+            <div className="card-body">
+              {data ? (
+                <p>
+                  Success! You may now head{' '}
+                  <Link to="/">back to the homepage.</Link>
+                </p>
+              ) : (
+                <form onSubmit={handleFormSubmit}>
+                  <input
+                    className="form-input font-work-sans"
+                    placeholder="Your email"
+                    name="email"
+                    type="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                  />
+                  <input
+                    className="form-input font-work-sans"
+                    placeholder="******"
+                    name="password"
+                    type="password"
+                    value={formState.password}
+                    onChange={handleChange}
+                  />
+                  <button
+                    className="btn bg-airblue hover:bg-timber text-vandyke font-roboto rounded-full"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </form>
+              )}
+  
+              {error && (
+                <div className="bg-timber font-work-sans text-green">
+                  {error.message}
+                </div>
+              )}
+            </div>
+          </div>
+      </main>
+    );
+};
