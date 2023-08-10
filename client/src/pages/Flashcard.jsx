@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Flashcard() {
+function Flashcard() {
     return (
-        <div>
-            
-        </div>
-    )
+        <h1>Hello World</h1>
+    );
 }
+
+export default Flashcard;
