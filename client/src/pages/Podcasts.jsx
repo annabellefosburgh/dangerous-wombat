@@ -7,8 +7,11 @@ function Podcasts() {
 
     return (
         <div>
+            <img src='https://brand-assets-cdn.listennotes.com/brand-assets-listennotes-com/production/media/image-65c70439d8e2fc4087d33e7c668a5be4.png' alt='powered by Listen Notes' />
             <h1>Podcasts and Episodes to Become a Better Developer</h1>
             <PodcastInfo podcastIds={podcastIds} episodeIds={episodeIds} />
         </div>
-    )
+    );
 }
+
+export default Podcasts;
