@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Auth from '../utils/auth';
+import Auth from '../../utils/auth';
 
-const Home = () => {
+const NavBar = () => {
   return (
     <div className="home-container">
       <nav className="navbar">
@@ -21,15 +21,8 @@ const Home = () => {
           )}
         </ul>
       </nav>
-      <main className="main-content">
-        <h1>Welcome to FlashPrep!</h1>
-        <p>Your personalized platform to prepare for interviews and tests using interactive flashcards.</p>
-      </main>
-      <footer className="footer">
-        <p>&copy; 2023 FlashPrep. All Rights Reserved.</p>
-      </footer>
     </div>
   );
-};
+}
 
-export default Home;
+export default NavBar;
