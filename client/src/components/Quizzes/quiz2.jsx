@@ -8,34 +8,34 @@ const Quiz2 = () => {
 
     const questions = [
         {
-            question: '',
+            question: 'What is it called when we make a mistake in the script?',
             type: 'radio',
-            options: [],
-            answer: ''
+            options: ['Error', 'Bug', 'Mistake', 'Debug'],
+            answer: 'Bug'
         },
         {
-            question: '',
+            question: 'Which is the following definition for debugging?',
             type: 'radio',
-            options: [],
-            answer: ''
+            options: ['Finding bugs', 'Fixing bugs', 'Both Finding and Fixing bugs', 'Clearing bugs'],
+            answer: 'Both Finding and Fixing bugs'
         },
         {
-            question: '',
+            question: 'Where can you view your errors in most web browser platforms?',
             type: 'radio',
-            options: [],
-            answer: ''
+            options: ['Task Bar', 'Bookmarks Bar', 'Developer Tools', 'Browser settings'],
+            answer: 'Developer tools'
         },
         {
-            question: '',
+            question: 'What kund of error notifications arew shown in the console window?',
             type: 'radio',
-            options: [],
-            answer: ''
+            options: ['Syntax errors', 'Runtime errors', 'Compilation errors', 'Both Syntax & Runtime errors'],
+            answer: 'Both Syntax & Runtime errors'
         },
         {
-            question: '',
+            question: 'What is the purpose of a JavaScript debugger?',
             type: 'radio',
-            options: [],
-            answer: ''
+            options: ['Correction of errors', 'Placing script execution under control', 'Pinpointing exact point of error', 'All of the above'],
+            answer: 'Placing script execution under control'
         }
     ]
 
