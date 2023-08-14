@@ -8,34 +8,35 @@ const Quiz3 = () => {
 
     const questions = [
         {
-            question: '',
+            question: 'Which of the following is generally used for performing tasks like creating the structure of relations and deleting relations?',
             type: 'radio',
-            options: [],
-            answer: ''
+            options: ['Data manipulation language', 'Query', 'Relational  schema', 'Data definition language'],
+            answer: 'Data definition language'
         },
         {
-            question: '',
+            question: 'The given Query can also be replaced with ___ (code snippet?)',
             type: 'radio',
-            options: [],
-            answer: ''
+            options: ['Select name,course_id from teaches,instructor where instructor_id=course_id;', 'Select name, course_id from instructor natural join teaches;', 
+            'Select name, course_id from instructor;', 'Select course_id from instructor join teaches;'],
+            answer: 'Select name, course_id from instructor natural join teaches;'
         },
         {
-            question: '',
+            question: 'Which one of the following given statements possibly contains the error?',
             type: 'radio',
-            options: [],
-            answer: ''
+            options: ['select * from emp where empid = 10003;', 'select empid from emp where empid = 10006;', 'select empid from emp;', 'select empid where empid = 1009 and Lastname = "GELLER";'],
+            answer: 'select empid where empid = 1009 and Lastname = "GELLER";'
         },
         {
-            question: '',
+            question: 'What do you mean by one to many relationships?',
             type: 'radio',
-            options: [],
-            answer: ''
+            options: ['One class may have many teachers', 'One teacher can have many classes', 'Many classes may have many teachers', 'Many teachers may have many classes'],
+            answer: 'One teacher can have many classes'
         },
         {
-            question: '',
+            question: 'Which one of the following refers to the copies of the same data (or information) occupying the memory space at multiple places.',
             type: 'radio',
-            options: [],
-            answer: ''
+            options: ['Data repository', 'Data inconsisitency', 'Data mining', 'Data redundancy'],
+            answer: 'Data redundancy'
         }
     ]
 

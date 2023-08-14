@@ -13,17 +13,17 @@ const quizzes = (props) => {
             <div className="grid-cols-2 gap-10 row-span-2">
                 <div className="w-auto h-auto text-vandyke font-work-sans bg-airblue">
                     <p>
-                        <Link to="../components/Quizzes/quiz1"> Quiz 1: Beginner </Link>
+                        <Link to="../components/Quizzes/quiz1"> Quiz 1: Coding Basics </Link>
                     </p>
                 </div>
                 <div className="w-auto h-auto text-vandyke font-work-sans bg-timber">
                     <p>
-                        <Link to="../components/Quizzes/quiz2"> Quiz 2: Intermediate </Link>
+                        <Link to="../components/Quizzes/quiz2"> Quiz 2: Debugging </Link>
                     </p>
                 </div>
                 <div className="w-auto h-auto text-vandyke font-work-sans bg-timber">
                     <p>
-                        <Link to="../components/Quizzes/quiz3"> Quiz 3: Advanced </Link>
+                        <Link to="../components/Quizzes/quiz3"> Quiz 3: Databases </Link>
                     </p>
                 </div>
                 <div className="w-auto h-auto text-vandyke font-work-sans bg-hunter">
