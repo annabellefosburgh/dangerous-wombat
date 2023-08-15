@@ -44,8 +44,7 @@ const Login = (props) => {
     }
 
     return (
-      <main className="login-container">
-          <div className="card">
+      <main className="login-container flex">
             <h4 className="card-header">Login</h4>
             <div className="card-body">
               {data ? (
@@ -86,7 +85,6 @@ const Login = (props) => {
                 </div>
               )}
             </div>
-          </div>
       </main>
     );
 };

@@ -13,7 +13,7 @@ const Home = () => {
           <li><a href="/login">Login</a></li>
         </ul>
       </nav>
-      <main className="main-content">
+      <main className="main-content flex">
         <h1>Welcome to FlashPrep!</h1>
         <p>Your personalized platform to prepare for interviews and tests using interactive flashcards.</p>
       </main>

@@ -84,12 +84,55 @@ h1 {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-h2 {
+h2,
+h4 {
     font-family: 'Trirong', serif;
 }
 
+li {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.footer {
+    background-color: var(--airblue);
+}
+
+.footer-p {
+    color: var(--parchment);
+}
+
 /* Homepage */
+.navbar {
+    background-color: var(--airblue);
+    color:  var(--parchment);
+}
+
 .home-container {
     background-color: var(--parchment);
+}
+
+/* Login and signup container styling */
+.card-header {
+    background-color: var(--parchment);
+    color: var(--airblue);
+}
+
+.card-body {
+    background-color: var(--airblue);
+    color: var(--parchment);
 
 }
+
+.btn-submit {
+    background-color: var(--huntergreen);
+    color: var(--vandyke);
+
+}
+
+.error {
+    background-color: var(--timber);
+    color: var(--vandyke);
+    font-family: 'Work Sans', sans-serif;
+}
+
+

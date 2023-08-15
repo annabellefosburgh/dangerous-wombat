@@ -43,7 +43,7 @@ const Signup = () => {
     };
 
     return (
-      <main className="signup-container">
+      <main className="signup-container flex">
           <div className="card">
             <h4 className="card-header">Sign Up</h4>
             <div className="card-body">
