@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import "../node_modules/picnic/picnic.min.css";
-import '../App.css'
 
 function PodcastInfo({ podcastIds, episodeIds }) {
     const API_KEY = '1c9247616fa64c7083f70675522e1fee';

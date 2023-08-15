@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import "../node_modules/picnic/picnic.min.css";
-import '../App.css'
 
 export default function Flashcard({ flashcard }) {
     // State to manage the flipping of the flashcard
