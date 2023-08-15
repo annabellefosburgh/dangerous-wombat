@@ -64,14 +64,15 @@ const Quiz3 = () => {
     };
 
     return (
-        <div>
+        <div className="quiz-container">
+        <div className="show-score">
             {showScore ? (
-                <div>
+                <div className="score-results">
                     <h2>Quiz Complete!</h2>
                     <h3>Your Score: {score}</h3>
                 </div>
             ) : (
-                <div>
+                <div className="question-container flex">
                     <h2>Question {currentQuestion + 1}</h2>
                     <h3>{questions[currentQuestion].question}</h3>
                     {questions[currentQuestion].type === 'radio' && (
@@ -91,9 +92,10 @@ const Quiz3 = () => {
                             ))}
                         </ul>
                     )}
-                    <button onClick={handleNextQuestion}>Next Question</button>
+                    <button className="next-question" onClick={handleNextQuestion}>Next Question</button>
                 </div>
             )}
+        </div>
         </div>
     );
 };

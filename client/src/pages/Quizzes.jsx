@@ -5,14 +5,14 @@ import '../App.css'
 
 const Quizzes = (props) => {
     return (
-        <main className="quiz-home">
-            <div className="header">
+        <main className="quiz-home flex">
+            <div className="quiz-header">
                 <h2> Quizzes </h2>
             </div>
             <div clasName="description">
-                <h4 className="desc-h4"> Choose a quiz to take! Each quiz will contain increasingly difficult questions. </h4>
+                <h4 className="desc-h4"> Choose a quiz to take! Each quiz will vary in difficulty and topic. </h4>
             </div>
-            <div className="link-containers">
+            <div className="link-containers flex two">
                 <div className="indv-quiz1">
                     <p>
                         <Link to="../components/Quizzes/quiz1"> Quiz 1: Coding Basics </Link>
@@ -30,7 +30,7 @@ const Quizzes = (props) => {
                 </div>
                 <div className="indv-quiz4">
                     <p>
-                        <Link to="../components/Quizzes/quiz4"> Quiz 4: Master </Link>
+                        <Link to="../components/Quizzes/quiz4"> Quiz 4: Full Stack Misc </Link>
                     </p>
                 </div>
             </div>

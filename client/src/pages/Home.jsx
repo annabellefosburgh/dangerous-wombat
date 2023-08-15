@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="home-container flex">
       <nav className="navbar">
-        <a href="/">Logo</a>
+        <img className="logo" src='../assets/images/logo.svg' />
         <ul>
           <li><a href="/flashcards">Flashcards</a></li>
           <li><a href="/tests">Mock Tests</a></li>

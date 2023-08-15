@@ -107,6 +107,10 @@ li {
     color:  var(--parchment);
 }
 
+.logo {
+    height: 2em;
+}
+
 .home-container {
     background-color: var(--parchment);
 }
@@ -135,4 +139,63 @@ li {
     font-family: 'Work Sans', sans-serif;
 }
 
+/* Quiz page styling */
+.quiz-home {
+    background-color: var(--parchment);
+}
 
+.quiz-header {
+    color: var(--airblue);
+}
+
+.desc-h4 {
+    color: var(--vandyke);
+}
+
+.link-containers {
+    margin: 15%;
+}
+
+.indv-quiz1 {
+    background-color: var(--huntergreen);
+    
+}
+
+.indv-quiz2 {
+    background-color: var(--airblue);
+}
+
+.indv-quiz3 {
+    background-color: var(--airblue);
+}
+
+.indv-quiz4 {
+    background-color: var(--timber);
+}
+
+/* Individual quiz page styling */
+.quiz-container {
+    background-color: var(--parchment);
+}
+
+.question-container {
+    background-color: var(--airblue);
+    color: var(--parchment);
+}
+
+.next-question {
+    background-color:var(--huntergreen);
+    color: var(--timber);
+}
+
+.score-results {
+    background-color: var(--timber);
+    color: var(--vandyke);
+}
+
+/* Podcast page styling */
+
+.podcast-container {
+    background-color: var(--parchment);
+    color: var(--airblue);
+}
