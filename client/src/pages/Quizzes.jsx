@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const quizzes = (props) => {
+const Quizzes = (props) => {
     return (
         <main className="max-w-lg mx-auto bg-parchment">
             <div className="header font-roboto text-vandyke">
@@ -35,3 +35,5 @@ const quizzes = (props) => {
         </main>
     )
 }
+
+export default Quizzes;
