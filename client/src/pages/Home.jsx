@@ -1,6 +1,4 @@
 import React from 'react';
-import "../node_modules/picnic/picnic.min.css";
-import '../App.css'
 
 const Home = () => {
   return (
