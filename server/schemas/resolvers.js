@@ -1,6 +1,6 @@
 const Profile = require('../models');
 const bcrypt = require('bcrypt');
-const { signToken } = require('./auth');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
   // Query resolvers for fetching data
