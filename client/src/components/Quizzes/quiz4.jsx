@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import "../node_modules/picnic/picnic.min.css";
+import '../App.css'
 
 const Quiz4 = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -8,34 +10,34 @@ const Quiz4 = () => {
 
     const questions = [
         {
-            question: '',
+            question: 'What is the time complexity of merge sort?',
             type: 'radio',
-            options: [],
+            options: ['O(n*Log n)', 'O(3^N)', 'O(N²)', 'O(log N)'],
+            answer: 'O(n*Log n)'
+        },
+        {
+            question: 'What data structure underlies a Python list?',
+            type: 'radio',
+            options: ['Static arrays', 'Dynamic mutable arrays', 'Mulit-dimensional arrays', 'Associative arrays'],
             answer: ''
         },
         {
-            question: '',
+            question: 'Which of the followign is not a built in module in Node.js?',
             type: 'radio',
-            options: [],
-            answer: ''
+            options: ['fs', 'http', 'mysql', 'path'],
+            answer: 'mysql'
         },
         {
-            question: '',
+            question: 'Which of the following statement is tru about PHP?',
             type: 'radio',
-            options: [],
-            answer: ''
+            options: ['PHP is a Server Side Scripting Language', 'PHP is a Client Side Scripting Language', 'PHP is a database', 'None of the above'],
+            answer: 'PHP is a Server Side Scripting Language'
         },
         {
-            question: '',
+            question: 'What JSON framework is supported by iOS?',
             type: 'radio',
-            options: [],
-            answer: ''
-        },
-        {
-            question: '',
-            type: 'radio',
-            options: [],
-            answer: ''
+            options: ['BSON', 'JSONlite', 'SBJson', 'Heartstone JSON'],
+            answer: 'SBJson'
         }
     ]
 

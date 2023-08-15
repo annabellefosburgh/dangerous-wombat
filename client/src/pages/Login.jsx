@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
-
+import "../node_modules/picnic/picnic.min.css";
+import '../App.css'
 import Auth from '../utils/auth';
 
 //Writing login functionality
@@ -43,9 +44,9 @@ const Login = (props) => {
     }
 
     return (
-      <main className="max-w-lg mx-auto bg-parchment shadow-md">
+      <main className="login-container">
           <div className="card">
-            <h4 className="card-header text-vandyke font-trirong">Login</h4>
+            <h4 className="card-header">Login</h4>
             <div className="card-body">
               {data ? (
                 <p>
@@ -55,7 +56,7 @@ const Login = (props) => {
               ) : (
                 <form onSubmit={handleFormSubmit}>
                   <input
-                    className="form-input font-work-sans"
+                    className="form-input"
                     placeholder="Your email"
                     name="email"
                     type="email"
@@ -63,7 +64,7 @@ const Login = (props) => {
                     onChange={handleChange}
                   />
                   <input
-                    className="form-input font-work-sans"
+                    className="form-input"
                     placeholder="******"
                     name="password"
                     type="password"
@@ -71,7 +72,7 @@ const Login = (props) => {
                     onChange={handleChange}
                   />
                   <button
-                    className="btn bg-airblue hover:bg-timber text-vandyke font-roboto rounded-full"
+                    className="btn-submit"
                     type="submit"
                   >
                     Submit
@@ -80,7 +81,7 @@ const Login = (props) => {
               )}
   
               {error && (
-                <div className="bg-timber font-work-sans text-green">
+                <div className="error">
                   {error.message}
                 </div>
               )}
