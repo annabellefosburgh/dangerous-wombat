@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import "../node_modules/picnic/picnic.min.css";
 import '../App.css'
 
-const quizzes = (props) => {
+const Quizzes = (props) => {
     return (
         <main className="quiz-home">
             <div className="header">
@@ -37,3 +37,5 @@ const quizzes = (props) => {
         </main>
     )
 }
+
+export default Quizzes;
