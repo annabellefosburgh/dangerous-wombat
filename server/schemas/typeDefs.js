@@ -1,6 +1,4 @@
-const { gql } = require('apollo-server');
-
-const typeDefs = gql`
+const typeDefs = `
   # Profile type representing a user profile
   type Profile {
     name: String!
