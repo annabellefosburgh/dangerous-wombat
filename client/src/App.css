@@ -74,4 +74,22 @@ body {
     margin-top: 0;
 }
 
-/* Homepage 
+/* General element styling */
+p {
+    font-family: 'Work Sans', sans-serif;
+    color: var(--vandyke);
+}
+
+h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h2 {
+    font-family: 'Trirong', serif;
+}
+
+/* Homepage */
+.home-container {
+    background-color: var(--parchment);
+
+}

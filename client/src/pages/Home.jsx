@@ -4,7 +4,7 @@ import '../App.css'
 
 const Home = () => {
   return (
-    <div className="home-container">
+    <div className="home-container flex">
       <nav className="navbar">
         <a href="/">Logo</a>
         <ul>
