@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_PROFILE } from '../utils/mutations';
-
+import "../node_modules/picnic/picnic.min.css";
+import '../App.css'
 import Auth from '../utils/auth';
 
 //Writing signup functionality
@@ -42,9 +43,9 @@ const Signup = () => {
     };
 
     return (
-      <main className="max-w-lg mx-auto bg-parchment shadow-md">
+      <main className="signup-container">
           <div className="card">
-            <h4 className="card-header text-vandyke font-trirong-">Sign Up</h4>
+            <h4 className="card-header">Sign Up</h4>
             <div className="card-body">
               {data ? (
                 <p>
@@ -54,7 +55,7 @@ const Signup = () => {
               ) : (
                 <form onSubmit={handleFormSubmit}>
                   <input
-                    className="form-input font-work-sans color-vandyke"
+                    className="form-input"
                     placeholder="Your username"
                     name="name"
                     type="text"
@@ -62,7 +63,7 @@ const Signup = () => {
                     onChange={handleChange}
                   />
                   <input
-                    className="form-input font-work-sans text-vandyke"
+                    className="form-input"
                     placeholder="Your email"
                     name="email"
                     type="email"
@@ -70,7 +71,7 @@ const Signup = () => {
                     onChange={handleChange}
                   />
                   <input
-                    className="form-input font-work-sans text-vandyke"
+                    className="form-input"
                     placeholder="******"
                     name="password"
                     type="password"
@@ -78,7 +79,7 @@ const Signup = () => {
                     onChange={handleChange}
                   />
                   <button
-                    className="btn bg-airblue hover:bg-timber text-vandyke font-roboto rounded-full"
+                    className="btn-submit"
                     style={{ cursor: 'pointer' }}
                     type="submit"
                   >
@@ -88,7 +89,7 @@ const Signup = () => {
               )}
   
               {error && (
-                <div className="bg-timber font-work-sans text-green">
+                <div className="error">
                   {error.message}
                 </div>
               )}

@@ -1,34 +1,36 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import "../node_modules/picnic/picnic.min.css";
+import '../App.css'
 
 const Quizzes = (props) => {
     return (
-        <main className="max-w-lg mx-auto bg-parchment">
-            <div className="header font-roboto text-vandyke">
-                <h2 className="object-center"> Quizzes </h2>
+        <main className="quiz-home">
+            <div className="header">
+                <h2> Quizzes </h2>
             </div>
-            <div clasName="description font-trirong text-vandyke">
-                <h4 className="object-center"> Choose a quiz to take! Each quiz will contain increasingly difficult questions. </h4>
+            <div clasName="description">
+                <h4 className="desc-h4"> Choose a quiz to take! Each quiz will contain increasingly difficult questions. </h4>
             </div>
-            <div className="grid-cols-2 gap-10 row-span-2">
-                <div className="w-auto h-auto text-vandyke font-work-sans bg-airblue">
+            <div className="link-containers">
+                <div className="indv-quiz1">
                     <p>
-                        <Link to="/quiz1"> Quiz 1: Beginner </Link>
+                        <Link to="../components/Quizzes/quiz1"> Quiz 1: Coding Basics </Link>
                     </p>
                 </div>
-                <div className="w-auto h-auto text-vandyke font-work-sans bg-timber">
+                <div className="indv-quiz2">
                     <p>
-                        <Link to="/quiz2"> Quiz 2: Intermediate </Link>
+                        <Link to="../components/Quizzes/quiz2"> Quiz 2: Debugging </Link>
                     </p>
                 </div>
-                <div className="w-auto h-auto text-vandyke font-work-sans bg-timber">
+                <div className="indv-quiz3">
                     <p>
-                        <Link to="/quiz3"> Quiz 3: Advanced </Link>
+                        <Link to="../components/Quizzes/quiz3"> Quiz 3: Databases </Link>
                     </p>
                 </div>
-                <div className="w-auto h-auto text-vandyke font-work-sans bg-hunter">
+                <div className="indv-quiz4">
                     <p>
-                        <Link to="/quiz2"> Quiz 4: Master </Link>
+                        <Link to="../components/Quizzes/quiz4"> Quiz 4: Master </Link>
                     </p>
                 </div>
             </div>

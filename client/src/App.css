@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Trirong:ital,wght@1,600&family=Work+Sans&display=swap');
+
+:root {
+    --parchment: #eae4cb;
+    --airblue: #72a9c3;
+    --huntergreen: #38563e;
+    --timber: #e4dcd9;
+    --vandyke: #362b2b;
+}
+
 /* Styling the body */
 body {
     background-color: white;
@@ -63,3 +73,5 @@ body {
     /* Remove the top margin for the first option */
     margin-top: 0;
 }
+
+/* Homepage 
