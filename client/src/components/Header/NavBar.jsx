@@ -11,7 +11,7 @@ const NavBar = () => {
           <li><Link to='/flashcards'>Flashcards</Link></li>
           <li><Link to='/quizzes'>Mock Tests</Link></li>
           <li><Link to='/podcasts'>Podcasts</Link></li>
-          {Auth.loggedIn ? (
+          {!Auth.loggedIn ? (
             <li><button onClick={Auth.logout}>Logout</button></li>
           ) : (
             <div>

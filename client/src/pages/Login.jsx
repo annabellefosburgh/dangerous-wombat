@@ -1,92 +1,102 @@
-//Dependencies
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-//Writing login functionality
-const Login = (props) => {
-    const [formState, setFormState] = useState({ email: '', password: '' });
-    const [login, { error, data }] = useMutation(LOGIN_USER);
-  
-    //Update state based on form input
-    const handleChange = (event) => {
-      const { name, value } = event.target;
-  
-      setFormState({
-        ...formState,
-        [name]: value,
-      });
-    };
-  
-    //Submitting form
-    const handleFormSubmit = async (event) => {
-      event.preventDefault();
-      console.log(formState);
-      try {
-        const { data } = await login({
-          variables: { ...formState },
-        });
-  
-        Auth.login(data.login.token);
-      } catch (e) {
-        console.error(e);
-      }
-  
-      //Clear Form
-      setFormState({
-        email: '',
-        password: '',
-      });
+const Login = () => {
+  // create state of userFormData to null values
+  const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+  // create state of alert to false
+  const [showAlert, setShowAlert] = useState(false);
+  // create function using mutation to update user 
+  const [login, { error }] = useMutation(LOGIN_USER);
+
+  // handles input change by taking the input and setting the userFormData to those values
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
+  };
+
+  // handles form submit for the login page
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.stopPropagation();
+      return;
     }
 
-    return (
-      <main className="login-container">
-          <div className="card">
-            <h4 className="card-header">Login</h4>
-            <div className="card-body">
-              {data ? (
-                <p>
-                  Success! You may now head{' '}
-                  <Link to="/">back to the homepage.</Link>
-                </p>
-              ) : (
-                <form onSubmit={handleFormSubmit}>
-                  <input
-                    className="form-input"
-                    placeholder="Your email"
-                    name="email"
-                    type="email"
-                    value={formState.email}
-                    onChange={handleChange}
-                  />
-                  <input
-                    className="form-input"
-                    placeholder="******"
-                    name="password"
-                    type="password"
-                    value={formState.password}
-                    onChange={handleChange}
-                  />
-                  <button
-                    className="btn-submit"
-                    type="submit"
-                  >
-                    Submit
-                  </button>
-                </form>
-              )}
-  
-              {error && (
-                <div className="error">
-                  {error.message}
-                </div>
-              )}
-            </div>
+    try {
+      // waits for login using the user form data
+      const { data } = await login({
+        variables: { ...userFormData },
+      });
+
+      if (error) {
+        throw new Error('Something went wrong!');
+      }
+
+      // if login is correct uses user's JSON web token to sign in
+      const { token, user } = data.login;
+      console.log(user);
+      Auth.login(token);
+    } catch (err) {
+      console.error(err);
+      // if login fails show an alert of the error
+      setShowAlert(true);
+    }
+
+    // set user form data back to null values
+    setUserFormData({
+      username: '',
+      email: '',
+      password: '',
+    });
+  };
+
+  return (
+    <section>
+      <form noValidate onSubmit={handleFormSubmit}>
+        {showAlert && (
+          <div onClick={() => setShowAlert(false)}>
+              Something went wrong with your login credentials!
           </div>
-      </main>
-    );
+        )}
+        <div>
+          <label htmlFor='email'>Email</label>
+          <input 
+            type='text' 
+            placeholder='Your email' 
+            name='email' 
+            onChange={handleInputChange} 
+            value={userFormData.email} 
+            required
+          />
+          {!userFormData.email && <div>Email is required!</div>}
+        </div>
+
+        <div>
+          <label htmlFor='password'>Password</label>
+          <input 
+            type='password'
+            placeholder='Your password'
+            name='password'
+            onChange={handleInputChange}
+            value={userFormData.password}
+            required
+          />
+          {!userFormData.password && <div>Password is required</div>}
+        </div>
+        <button 
+          disabled={!(userFormData.email && userFormData.password)}
+          type='submit'>
+            Submit
+        </button>
+      </form>
+    </section>
+  );
 };
 
 export default Login;
