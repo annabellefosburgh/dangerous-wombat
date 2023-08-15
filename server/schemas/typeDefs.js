@@ -22,6 +22,7 @@ const typeDefs = `
         createProfile(name: String!, email: String!, password: String!): Profile!
         updateProfile(name: String!, email: String, password: String): Profile
         deleteProfile(name: String!): Profile
+        login(email: String!, password: String!): Auth
     }
 `;
 
