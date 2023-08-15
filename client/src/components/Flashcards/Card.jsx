@@ -14,14 +14,6 @@ export default function Flashcard({ flashcard }) {
             <div className="front">
                 {/* Display the question */}
                 {flashcard.question}
-                <div className="flashcard-options">
-                    {/* Map over the options and render each one */}
-                    {flashcard.options.map((option, index) => (
-                        <div key={index} className="flashcard-option">
-                            {option}
-                        </div>
-                    ))}
-                </div>
             </div>
             {/* Display the answer on the back of the card */}
             <div className="back">{flashcard.answer}</div>
