@@ -2,18 +2,21 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <div className="home-container flex">
-      <nav className="navbar">
-        <img className="logo" src='../assets/images/logo.svg' />
-        <ul>
-          <li><a href="/flashcards">Flashcards</a></li>
-          <li><a href="/tests">Mock Tests</a></li>
-          <li><a href="/login">Login</a></li>
-        </ul>
-      </nav>
-      <main className="main-content flex">
-        <h1>Welcome to FlashPrep!</h1>
+    <div className="home-container">
+      <main className="main-content">
+        <h1>Welcome to TechPrep Pro!</h1>
         <p>Your personalized platform to prepare for interviews and tests using interactive flashcards.</p>
+          <div className="navigation flex two">
+          <div className="navbox-flash">
+          <a href="/flashcards">Flashcards</a>
+          </div>
+          <div className="navbox-quiz">
+          <a href="/quizzes">Mock Tests</a>
+          </div>
+          <div className="navbox-podcasts">
+          <a href="/podcasts">Podcast Resources</a>
+          </div>
+          </div>
       </main>
       <footer className="footer">
         <p className="footer-p">&copy; 2023 TechPrep Pro. All Rights Reserved.</p>

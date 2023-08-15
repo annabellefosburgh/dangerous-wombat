@@ -5,23 +5,20 @@ import Auth from '../../utils/auth';
 const NavBar = () => {
   return (
     <div className="home-container">
-      <nav className="navbar">
-        <a href="/">Logo</a>
-        <ul>
-          <li><Link to='/flashcards'>Flashcards</Link></li>
-          <li><Link to='/quizzes'>Mock Tests</Link></li>
-          <li><Link to='/podcasts'>Podcasts</Link></li>
+      <div className="navbar">
+        <img className='logo' src='./assets/images/logo.svg'></img>
+      <div>
           {Auth.loggedIn ? (
-            <li><button onClick={Auth.logout}>Logout</button></li>
-          ) : (
-            <div>
-              <li><Link to='/login'>Login</Link></li>
-              <li><Link to='/signup'>Sign Up</Link></li>
-            </div>
+            <button className="pseudo" onClick={Auth.logout}>Logout</button>
+        ) : (
+        <div>
+          <button className="psuedo stack"><Link to='/login'>Login</Link></button>
+          <button className="psuedo stack"><Link to='/signup'>Sign Up</Link></button>
+        </div>
           )}
-        </ul>
-      </nav>
+      </div>
     </div>
+    </div >
   );
 }
 
