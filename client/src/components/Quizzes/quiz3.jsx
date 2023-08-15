@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import "../node_modules/picnic/picnic.min.css";
-import '../App.css'
 
 const Quiz3 = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);

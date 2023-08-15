@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import FlashcardList from '../components/Flashcards/FlashcardList';
-import "../node_modules/picnic/picnic.min.css";
-import '../App.css'
 
 function Flashcard() {
     const [flashcards, setFlashcards] = useState(SAMPLE_FLASHCARDS)

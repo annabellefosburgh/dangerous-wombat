@@ -3,8 +3,6 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
-import "../node_modules/picnic/picnic.min.css";
-import '../App.css'
 import Auth from '../utils/auth';
 
 //Writing login functionality

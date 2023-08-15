@@ -1,7 +1,5 @@
 import React from 'react'
 import Flashcard from './Card';
-import "../node_modules/picnic/picnic.min.css";
-import '../App.css'
 
 // Takes a prop named 'flashcards'
 export default function FlashcardList({ flashcards }) {
