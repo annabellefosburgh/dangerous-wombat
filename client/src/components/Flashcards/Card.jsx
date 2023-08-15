@@ -11,10 +11,8 @@ export default function Flashcard({ flashcard }) {
             // Toggle the flip state when the card is clicked
             onClick={() => setFlip(!flip)}
         >
-            <div className="front">
-                {/* Display the question */}
-                {flashcard.question}
-            </div>
+            {/* Display the question */}
+            <div className="front">{flashcard.question}</div>
             {/* Display the answer on the back of the card */}
             <div className="back">{flashcard.answer}</div>
         </div>
