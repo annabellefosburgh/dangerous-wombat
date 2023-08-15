@@ -1,11 +1,12 @@
 import { gql } from '@apollo/client';
 
-export const GET_FLASHCARDS = gql`
-  query GetFlashcards {
-    flashcards {
-      id
-      title
-      content
+export const GET_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      email
+      password
     }
   }
 `;

@@ -1,83 +1,49 @@
-const Profile = require('../models');
-const bcrypt = require('bcrypt');
+const User = require('../models/Profiles');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
-  // Query resolvers for fetching data
     Query: {
-    // Fetch all profiles
-        profiles: async () => {
-            try {
-                return await Profile.find({});
-            } catch (error) {
-                // Handle any errors that occur during the query
-                throw new Error('Error fetching profiles');
+        // finds user based on their id
+        me: async (parent, args, context) => {
+            if (context.user) {
+                const foundUser = await User.findOne({_id: context.user._id});
+                return foundUser;
             }
-        },
-        // Fetch a single profile by name
-        profile: async (_, { name }) => {
-            try {
-                return await Profile.findOne({ name });
-            } catch (error) {
-                // Handle any errors that occur during the query
-                throw new Error('Error fetching profile');
-            }
+            throw new Error('Not authenticated. Please log in.');
         },
     },
-  // Mutation resolvers for creating, updating, and deleting data
     Mutation: {
-        // Create a new profile
-        createProfile: async (_, { name, email, password }) => {
-            try {
-                return await Profile.create({ name, email, password });
-            } catch (error) {
-                // Handle any errors that occur during creation
-                throw new Error('Error creating profile');
+        // finds user by email and then checks if password is correct
+        // if password is correct it creates a token for the logged in user
+        login: async (parent, { email, password }) => {
+            const user = await User.findOne({ 
+                $or: [{username: email }, { email }]
+            });
+            
+            if (!user) {
+                throw new Error("Can't find this user");
             }
-        },
-        // Update an existing profile
-        updateProfile: async (_, { name, email, password }) => {
-            try {
-                const profile = await Profile.findOne({ name });
-                // If profile is not found, throw an error
-                if (!profile) throw new Error('Profile not found');
-                // Update email if provided
-                if (email) profile.email = email;
-                // Update and hash password if provided
-                if (password) {
-                    const saltRounds = 10;
-                    profile.password = await bcrypt.hash(password, saltRounds);
-                }
-                // Save the updated profile
-                return await profile.save();
-            } catch (error) {
-                // Handle any errors that occur during updating
-                throw new Error('Error updating profile');
-            }
-        },
-        // Delete a profile by name
-        deleteProfile: async (_, { name }) => {
-            try {
-                return await Profile.findOneAndDelete({ name });
-            } catch (error) {
-                // Handle any errors that occur during deletion
-                throw new Error('Error deleting profile');
-            }
-        },
-        // Login a user
-        login: async (_, { email, password }) => {
-            const profile = await Profile.findOne({ email });
-            if (!profile) {
-                throw new Error('No user found with this email address');
-            }
-            const correctPw = await profile.isCorrectPassword(password);
+
+            const correctPw = await user.isCorrectPassword(password);
+
             if (!correctPw) {
-                throw new Error('Incorrect credentials');
+                throw new Error('Wrong password!');
             }
-            const token = signToken({ email: profile.email, name: profile.name, _id: profile._id });
-            return { token, profile };
+
+            const token = signToken(user);
+            return { token, user };
         },
-    },
+        // creates a user with username, email, password and assigns a token to that user
+        addProfile: async (parent, { username, email, password }) => {
+            const user = await User.create({ username, email, password });
+            if (!user) {
+                throw new Error('Something is wrong!');
+            }
+
+            const token = signToken(user);
+            return { token, user };
+        },
+    }
 };
 
 module.exports = resolvers;

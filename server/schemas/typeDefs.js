@@ -1,29 +1,28 @@
-const typeDefs = `
-    # Profile type representing a user profile
-    type Profile {
-        name: String!
-        email: String!
-    }
+const typeDefs =`
+  # Profile type representing a user profile
+  type Profile {
+    _id: ID
+    username: String
+    email: String
+    password: String
+  }
 
-    # Response type for the login mutation
-    type Auth {
-        token: String!
-        user: Profile!
-    }
+  # Response type for the login mutation
+  type Auth {
+    token: String
+    user: Profile
+  }
 
-    # Queries allow fetching data
-    type Query {
-        profiles: [Profile]!
-        profile(name: String!): Profile
-    }
+  # Queries allow fetching data
+  type Query {
+    me: Profile
+  }
 
-    # Mutations allow creating, updating, and deleting data
-    type Mutation {
-        createProfile(name: String!, email: String!, password: String!): Profile!
-        updateProfile(name: String!, email: String, password: String): Profile
-        deleteProfile(name: String!): Profile
-        login(email: String!, password: String!): Auth
-    }
+  # Mutations allow creating, updating, and deleting data
+  type Mutation {
+    login(email: String!, password: String!): Auth
+    addProfile(username: String!, email: String!, password: String!): Auth
+  }
 `;
 
 module.exports = typeDefs;
