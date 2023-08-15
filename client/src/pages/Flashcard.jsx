@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import FlashcardList from '../components/Flashcards/FlashcardList';
+import "../node_modules/picnic/picnic.min.css";
 import '../App.css'
 
 function Flashcard() {
