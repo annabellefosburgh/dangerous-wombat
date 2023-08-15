@@ -41,23 +41,23 @@ const SAMPLE_FLASHCARDS = [
     },
     {
         id: 7,
-        question: 'A: What are the four major principles of object-oriented programming?',
-        answer: 'Q: Abstraction, encapsulation, inheritance, and polymorphism”',
+        question: 'Q: What are the four major principles of object-oriented programming?',
+        answer: 'A: Abstraction, encapsulation, inheritance, and polymorphism”',
     },
     {
         id: 8,
-        question: 'A: What is a join (in SQL)?',
-        answer: 'Q: A join is used to combine rows from two or more tables based on a related column between them.',
+        question: 'Q: What is a join (in SQL)?',
+        answer: 'A: A join is used to combine rows from two or more tables based on a related column between them.',
     },
     {
         id: 9,
-        question: 'A: What is event bubbling?',
-        answer: 'Q: Event Bubbling is a concept in the DOM (Document Object Model). It happens when an element receives an event, and that event bubbles up (or you can say is transmitted or propagated) to its parent and ancestor elements in the DOM tree until it gets to the root element.',
+        question: 'Q: What is event bubbling?',
+        answer: 'A: Event Bubbling is a concept in the DOM (Document Object Model). It happens when an element receives an event, and that event bubbles up (or you can say is transmitted or propagated) to its parent and ancestor elements in the DOM tree until it gets to the root element.',
     },
     {
         id: 10,
-        question: 'A: How can you target an h3 and h2 element with the same styling?',
-        answer: 'Q: Elements can be group targeted by separating the element with a comma',
+        question: 'Q: How can you target an h3 and h2 element with the same styling?',
+        answer: 'A: Elements can be group targeted by separating the element with a comma',
     },
 ]
 
