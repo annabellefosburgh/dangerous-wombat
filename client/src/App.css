@@ -13,7 +13,18 @@ body {
     background-color: white;
 }
 
-/* Flashcard styling */
+/* Flashcard page layout */
+.card-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 50px;
+    padding: 20px;
+  }
+
+/* General flashcard styling */
 .card {
     display: flex;
     justify-content: center;
@@ -21,15 +32,14 @@ body {
     position: relative;
     border-radius: .25rem;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
-    background-color: white;
     transform-style: preserve-3d;
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 500px;
     transition: 150ms;
     cursor: pointer;
     /* Define the 3D transformation */
-    transform: perspective(1000px) rotateY(var(--rotate-y, 0))
-    translateY(var(--translate-y,0));
+    transform: rotateY(var(--rotate-y, 0));
+    background-color:   #eae4cb;
 }
 
 .card:hover {
@@ -47,31 +57,103 @@ body {
     /* Position the content absolutely within the card */
     position: absolute;
     padding: 1rem;
+}
+
+.card .front {
+    opacity: 1;
+    transition: opacity 150ms;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* Hide the backface of the card during transitions */
     backface-visibility: hidden;
+    background-color: #362b2b;
+    color: white;
+}
+
+.card.flip .front {
+    /* Fully hidden when flipped */
+    opacity: 0;
 }
 
 /* Styling for the back side of the card */
 .card .back {
-    /* Rotate the back side to show when the card is flipped */
+    /* Fully hidden by default */
+    opacity: 0;
     transform: rotateY(180deg);
+    transition: opacity 150ms, transform 150ms;
 }
 
-.flashcard-options {
-    /* Add some margin to the options container */
-    margin-top: .5rem;
+.card.flip .back {
+    /* Fully visible when flipped */
+    opacity: 1;
 }
 
-.flashcard-option {
-    /* Add margin to separate options and set font color and size */
-    margin-top: .25rem;
-    color: gray;
-    font-size: .75rem;
+/* Flashcard page button styling */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
-.flashcard-option:first-child {
-    /* Remove the top margin for the first option */
-    margin-top: 0;
+.correct-button
+.incorrect-button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.correct-button {
+    background-color: #38563e;
+}
+
+.incorrect-button {
+  background-color: darkred;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+ }
+  
+.next-button, .finish-button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #72a9c3;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+  
+.next-button:hover, .finish-button:hover {
+    background-color: #362b2b;
+}
+
+.next-button {
+    background-color: #72a9c3;
+}
+
+.answer-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    color: #362b2b;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 20px;
 }
 
 /* General element styling */
