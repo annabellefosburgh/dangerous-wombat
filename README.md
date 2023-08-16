@@ -4,17 +4,17 @@
 TechPrep Pro is tailored for new developers preparing to excel in technical interviews. This efficient application offers a comprehensive way to study and review essential materials. Upon signing up, developers can access a multitude of features, such as studying with flashcards, testing their knowledge through quizzes, and expanding their understanding by listening to informative podcasts.
 
 ## Table of Contents  
-[1. Application Screenshots](#Application-Screenshots)  
-[2. Application Link](#Application-Link)  
-[3. Repository](#Repository)  
-[4. Features](#Features)  
-[5. Installation](#Installation)  
-[6. Technologies Used](#Technologies-Used)  
-[7. Contributors](#Contributors)  
-[8. Contributing Guidelines](#Contributing-Guidelines)  
-[9. Tests](#Tests)  
-[10. Resources](#Resources)  
-[11. License](#License)  
+[1. Application Screenshots](#application-screenshots)  
+[2. Application Link](#application-link)  
+[3. Repository](#repository)  
+[4. Features](#features)  
+[5. Installation](#installation)  
+[6. Technologies Used](#technologies-used)  
+[7. Contributors](#contributors)  
+[8. Contributing Guidelines](#contributing-guidelines)  
+[9. Tests](#tests)  
+[10. Resources](#resources)  
+[11. License](#license)  
 
 ## Application Screenshots
 ![PLACEHOLDER: Screenshot of application]()
@@ -56,7 +56,7 @@ Clone the starter code and initialize the program by running an ``` npm install 
 If you would like to contribute to this project, please fork the repository and submit a pull request with your proposed contributions.
 
 ## Tests
-Currently, there are no tests implemented for this project. If you would like to contribute, please follow the contributing guidelines.
+Currently, there are no tests implemented for this project. If you would like to contribute, please follow the [contributing guidelines](#contributing-guidelines).
 
 ## Resources
 Sources referenced to develop this application:
