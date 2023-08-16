@@ -6,7 +6,7 @@ const Home = () => {
       <main className="main-content">
         <h1>Welcome to TechPrep Pro!</h1>
         <p>Your personalized platform to prepare for interviews and tests using interactive flashcards.</p>
-          <div className="navigation col-3 col-s-3">
+          <div className="navigation">
           <div className="navbox-flash">
           <a className="linktext" href="/flashcards">Flashcards</a>
           </div>
