@@ -56,7 +56,7 @@ const Signup = () => {
   };
 
     return (
-      <section>
+      <section className="signup-section">
       <form noValidate onSubmit={handleFormSubmit}>
         {showAlert && (
           <div onClick={() => setShowAlert(false)}>

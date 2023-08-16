@@ -15,13 +15,14 @@ body {
 
 /* Flashcard page layout */
 .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 100px;
     margin-left: 50px;
     padding: 20px;
-}
+  }
 
 /* General flashcard styling */
 .card {
@@ -38,7 +39,7 @@ body {
     cursor: pointer;
     /* Define the 3D transformation */
     transform: rotateY(var(--rotate-y, 0));
-    background-color: #e4dcd9;
+    background-color:   #eae4cb;
 }
 
 .card:hover {
@@ -56,7 +57,6 @@ body {
     /* Position the content absolutely within the card */
     position: absolute;
     padding: 1rem;
-    /* Hide the backface of the card during transitions */
 }
 
 .card .front {
@@ -69,7 +69,8 @@ body {
     justify-content: center;
     /* Hide the backface of the card during transitions */
     backface-visibility: hidden;
-    background-color: #eae4cb;
+    background-color: #362b2b;
+    color: white;
 }
 
 .card.flip .front {
@@ -88,6 +89,71 @@ body {
 .card.flip .back {
     /* Fully visible when flipped */
     opacity: 1;
+}
+
+/* Flashcard page button styling */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.correct-button
+.incorrect-button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.correct-button {
+    background-color: #38563e;
+}
+
+.incorrect-button {
+  background-color: darkred;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+ }
+  
+.next-button, .finish-button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #72a9c3;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+  
+.next-button:hover, .finish-button:hover {
+    background-color: #362b2b;
+}
+
+.next-button {
+    background-color: #72a9c3;
+}
+
+.answer-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 24px;
+    font-weight: bold;
+    color: #362b2b;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 20px;
 }
 
 /* Homepage */

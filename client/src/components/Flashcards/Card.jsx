@@ -11,8 +11,6 @@ export default function Flashcard({ flashcard, onAnswer }) {
     const handleAnswer = (isCorrect) => {
         setAnswerStatus(isCorrect ? 'Correct' : 'Incorrect');
         onAnswer(isCorrect);
-        // If false, flip the card back over
-        setFlip(false);
     };
 
     return (
@@ -26,8 +24,8 @@ export default function Flashcard({ flashcard, onAnswer }) {
             </div>
             {flip && (
                 <div className="buttons">
-                    <button onClick={() => handleAnswer(true)}>Correct</button>
-                    <button onClick={() => handleAnswer(false)}>Incorrect</button>
+                    <button className="correct-button" onClick={() => handleAnswer(true)}>Correct</button>
+                    <button className="incorrect-button" onClick={() => handleAnswer(false)}>Incorrect</button>
                 </div>
             )}
             <div className="answer-status">{answerStatus}</div>
