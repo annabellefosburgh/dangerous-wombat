@@ -4,7 +4,8 @@ const bcrypt = require('bcrypt');
 
 //Initializing a profile schema
 const profileSchema = new Schema({
-    name: {
+    // changed 'name' to 'username'
+    username: {
       type: String,
       required: true,
       unique: true,
@@ -21,7 +22,11 @@ const profileSchema = new Schema({
       required: true,
       minlength: 5,
     },
-  });
+    previousScore: {
+      type: Number,
+      default: 0,
+    },
+});
 
   //Pre-save middleware to create a password
   profileSchema.pre('save', async function (next) {
