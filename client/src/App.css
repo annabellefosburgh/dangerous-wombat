@@ -2,15 +2,15 @@
 
 :root {
     --parchment: #eae4cb;
-    --airblue: #72a9c3;
+    --airblue: #72a9c3; 
     --huntergreen: #38563e;
-    --timber: #e4dcd9;
+    --timber: #f7c7b6;
     --vandyke: #362b2b;
 }
 
 /* Styling the body */
 body {
-    background-color: white;
+    background-color: var(--parchment);
 }
 
 /* Flashcard page layout */
@@ -40,6 +40,7 @@ body {
     /* Define the 3D transformation */
     transform: rotateY(var(--rotate-y, 0));
     background-color:   #eae4cb;
+
 }
 
 .card:hover {
@@ -156,4 +157,239 @@ body {
     margin-top: 20px;
 }
 
+.card-container {
+    display: flex;
+    flex-shrink:inherit;
+}
+
+/* General element styling */
+p {
+    font-family: 'Work Sans', sans-serif;
+    color: var(--vandyke);
+}
+
+h1, h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h4 {
+    font-family: 'Trirong', serif;
+}
+
+li {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.footer {
+    background-color: var(--airblue);
+    display: flex;
+    align-self: end;
+}
+
+.footer-p {
+    color: var(--parchment);
+}
+
 /* Homepage */
+.navbar {
+    bottom: 0;
+    background-color: var(--airblue);
+    color:  var(--parchment);
+}
+
+.logo {
+    height: 2em;
+}
+
+.home-container {
+    background-color: var(--parchment);
+}
+
+.main-content {
+    min-height: calc(100vh - 62px);
+    text-align: center;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.linktext {
+    color: var(--parchment);
+    
+}
+
+.navbox-flash {
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    background-color: var(--airblue);
+    margin: 15px;
+}
+
+.navbox-quiz {
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    background-color: var(--huntergreen);
+    margin: 15px;
+}
+
+.navbox-podcasts {
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    background-color: var(--timber);
+    margin: 15px;
+}
+
+/* Login and signup container styling */
+.card-header {
+    background-color: var(--parchment);
+    color: var(--airblue);
+}
+
+.card-body {
+    background-color: var(--airblue);
+    color: var(--parchment);
+
+}
+
+.btn-submit {
+    background-color: var(--huntergreen);
+    color: var(--vandyke);
+
+}
+
+.error {
+    background-color: var(--timber);
+    color: var(--vandyke);
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* Quiz page styling */
+.quiz-home {
+    background-color: var(--parchment);
+}
+
+.quiz-header {
+    text-align: center;
+    color: var(--airblue);
+}
+
+.link-containers {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.desc-h4 {
+    text-align: center;
+    color: var(--vandyke);
+}
+
+.indv-quiz1 {
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    background-color: var(--huntergreen);
+    margin: 15px;
+}
+
+.indv-quiz2 {
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    background-color: var(--airblue);
+    margin: 15px;
+}
+
+.indv-quiz3 {
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    background-color: var(--airblue);
+    margin: 15px;
+}
+
+.indv-quiz4 {
+    height: 300px;
+    width: 300px;
+    text-align: center;
+    background-color: var(--timber);
+    margin: 15px;
+}
+
+/* Individual quiz page styling */
+.quiz-container {
+    background-color: var(--parchment);
+}
+
+.question-container {
+    background-color: var(--airblue);
+    color: var(--parchment);
+}
+
+.next-question {
+    background-color:var(--huntergreen);
+    color: var(--timber);
+}
+
+.score-results {
+    background-color: var(--timber);
+    color: var(--vandyke);
+}
+
+/* Podcast page styling */
+
+.podcast-container {
+    background-color: var(--parchment);
+    color: var(--airblue);
+}
+
+/* Media queries */
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+  
+
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  }
+  
+  
