@@ -6,15 +6,15 @@ const Home = () => {
       <main className="main-content">
         <h1>Welcome to TechPrep Pro!</h1>
         <p>Your personalized platform to prepare for interviews and tests using interactive flashcards.</p>
-          <div className="navigation flex two">
+          <div className="navigation col-3 col-s-3">
           <div className="navbox-flash">
-          <a href="/flashcards">Flashcards</a>
+          <a className="linktext" href="/flashcards">Flashcards</a>
           </div>
           <div className="navbox-quiz">
-          <a href="/quizzes">Mock Tests</a>
+          <a className="linktext" href="/quizzes">Mock Tests</a>
           </div>
           <div className="navbox-podcasts">
-          <a href="/podcasts">Podcast Resources</a>
+          <a className="linktext" href="/podcasts">Podcast Resources</a>
           </div>
           </div>
       </main>
