@@ -3,6 +3,7 @@ const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
+const mongoose = require('mongoose');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
@@ -41,5 +42,11 @@ const startApolloServer = async () => {
   });
 };
 
+// Connect Mongoose to DB - Update the connection string here
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://finalproject:2023@cluster0.jyn26uz.mongodb.net/', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
 // Call the async function to start the server
-  startApolloServer();
+startApolloServer();
