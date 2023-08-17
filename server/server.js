@@ -3,6 +3,7 @@ const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
+const mongoose = require('mongoose');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
@@ -40,6 +41,16 @@ const startApolloServer = async () => {
     });
   });
 };
+
+// Connect Mongoose to DB
+var MONGODB_URI = process.env.MONGODB_URL || "mongodb://localhost/tech-prep-pro";
+const options = {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+  family: 4
+};
+mongoose.connect(MONGODB_URI,options)
 
 // Call the async function to start the server
   startApolloServer();
