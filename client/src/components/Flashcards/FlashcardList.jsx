@@ -1,61 +1,55 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Flashcard from './Card';
 import { useQuery, useMutation } from '@apollo/client';
 import { GET_ME } from '../../utils/queries';
 import { UPDATE_SCORE } from '../../utils/mutations';
 
 export default function FlashcardList({ flashcards }) {
-    // State to track the user's current score
+    // State for managing the score, current card index, completion status, and score update status
     const [score, setScore] = useState(0);
-
-    // State to track the index of the currently displayed flashcard
     const [currentCardIndex, setCurrentCardIndex] = useState(0);
+    const [finished, setFinished] = useState(false);
+    const [scoreUpdated, setScoreUpdated] = useState(false);
 
-    // Fetch user data including email and previousScore using useQuery
+    // Fetching the current user's data using Apollo Client
     const { loading, error, data } = useQuery(GET_ME);
     const userEmail = data?.me?.email;
-
-    // Get the user's previous score from the fetched data or default to 0
     const previousScore = data?.me?.previousScore || 0;
 
-    // Set up the mutation to update previousScore
+    // Mutation for updating the score in the database
     const [updateScore] = useMutation(UPDATE_SCORE);
 
-    // State to track whether the user has finished all flashcards
-    const [finished, setFinished] = useState(false);
-    
-    // New state variable to manage the displayed previous score
-    const [displayedPreviousScore, setDisplayedPreviousScore] = useState(previousScore);
-
-    // Function to handle the user's answer to a flashcard
+    // Function to handle answering the flashcard
     const handleAnswer = (isCorrect) => {
+        // Increment the score if the answer is correct
         setScore(prevScore => isCorrect ? prevScore + 1 : prevScore);
     };
 
-    // Function to move to the next flashcard
+    // Function to handle moving to the next flashcard
     const handleNextCard = () => {
+        // Increment the current card index
         setCurrentCardIndex(prevIndex => prevIndex + 1);
     };
 
-    // Function to handle when the user clicks "Finish"
+    // Function to handle finishing the flashcards
     const handleFinish = async () => {
         try {
-            // Update the user's previousScore using the mutation
             await updateScore({
+                // Provide variables for the mutation
                 variables: { email: userEmail, previousScore: score },
             });
-            // Update the displayed previous score with the current score
-            setDisplayedPreviousScore(score);
-            setFinished(true); // Mark the user as finished
+            setScoreUpdated(true); // Mark the score as updated
+            setFinished(true); // Mark the flashcards as finished
         } catch (error) {
+            // Log an error if the score update fails
             console.error("Error updating previous score:", error.message);
         }
     };
 
-    // Component rendering
     return (
         <div className="card-grid">
-            {/* Display the current flashcard if index is within range */}
+            {/* Render the flashcard */}
             {flashcards.length > currentCardIndex && (
                 <Flashcard
                     flashcard={flashcards[currentCardIndex]}
@@ -63,19 +57,35 @@ export default function FlashcardList({ flashcards }) {
                     key={currentCardIndex}
                 />
             )}
+            {/* Render the current score */}
             <div className="score-container">
-                <div className="score">Current Score: {score}</div>
-                {/* Display the user's previous score */}
-                <div className="previous-score">Previous Score: {displayedPreviousScore}</div>
-            </div>
-            <div className="button-container">
-                {/* Display the "Next" button if not finished */}
-                {!finished && (
-                    <button className="next-button" onClick={handleNextCard}>Next</button>
+                {data?.me && !finished ? (
+                    <div className="score">Score: {scoreUpdated ? score : previousScore}</div>
+                ) : (
+                    <div className="score">Score: {score}</div>
                 )}
-                {/* Display the "Finish" button */}
-                <button className="finish-button" onClick={handleFinish}>Finish</button>
             </div>
+            {/* Render buttons and messages */}
+            <div className="button-container">
+            {/* Render the "Next" button if not finished */}
+            {!finished && (
+                <button className="next-button" onClick={handleNextCard}>Next</button>
+            )}
+            {/* Render the "Finish" button if not finished */}
+            {!finished && (
+                <div className="button-spacing">
+                    <button className="finish-button" onClick={handleFinish}>Finish</button>
+                </div>
+            )}
+            {/* Render the completion message below the buttons if finished */}
+            {finished && (
+                <div className="finish-message">
+                    <p>Congratulations on completing the flashcards!</p>
+                    {/* Use the Link component to navigate to the home page */}
+                    <p><Link to="/">Go to Home</Link></p>
+                </div>
+            )}
         </div>
+    </div>
     );
 }

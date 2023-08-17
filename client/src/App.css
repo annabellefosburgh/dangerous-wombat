@@ -92,6 +92,22 @@ body {
     opacity: 1;
 }
 
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 50px;
+    padding: 20px;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
 /* Flashcard page button styling */
 .buttons {
   display: flex;
@@ -99,12 +115,21 @@ body {
   margin-top: 10px;
 }
 
-.correct-button
+.correct-button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-right: 10px;
+    background-color: #38563e;
+}
+
 .incorrect-button {
     padding: 5px 10px;
     border: none;
     cursor: pointer;
     color: white;
+    background-color: darkred;
 }
 
 .correct-button {
@@ -157,10 +182,13 @@ body {
     margin-top: 20px;
 }
 
-.card-container {
-    display: flex;
-    flex-shrink:inherit;
+.finish-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #362b2b;
 }
+
 
 /* General element styling */
 p {
@@ -243,6 +271,22 @@ li {
     width: 150px;
     text-align: center;
     background-color: var(--timber);
+    margin: 15px;
+}
+
+.navbox-login {
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    background-color: #362b2b;
+    margin: 15px;
+}
+
+.navbox-signup {
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    background-color: #362b2b;
     margin: 15px;
 }
 
