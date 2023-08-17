@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
@@ -23,6 +24,14 @@ const Login = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
+    // check if form has everything 
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.stopPropagation();
+      setIsLoggedIn(true);
+      return;
+    }
+
     try {
       // waits for login using the user form data
       const { data } = await login({
@@ -34,9 +43,8 @@ const Login = () => {
       }
 
       // if login is correct, use user's JSON web token to sign in
-      const { token, user } = data.loginUser;
+      const { token } = data.loginUser;
       Auth.login(token);
-      setIsLoggedIn(true); // set the login status to true
     } catch (err) {
       console.error(err);
       // if login fails, show an alert of the error
@@ -91,6 +99,9 @@ const Login = () => {
             type='submit'>
               Submit
           </button>
+          <div>
+            <Link to='/signup'>Go to the Sign Up Page</Link>
+          </div>
         </form>
       )}
     </section>
