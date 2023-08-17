@@ -20,7 +20,7 @@ TechPrep Pro is tailored for new developers preparing to excel in technical inte
 ![PLACEHOLDER: Screenshot of application]()
 
 ## Application Link
-[PLACEHOLDER: Application Link]()
+[Application Link](https://techprep-client-a7f9715bc023.herokuapp.com/)
 
 ## Repository
 [GitHub Repository](https://github.com/annabellefosburgh/dangerous-wombat)
