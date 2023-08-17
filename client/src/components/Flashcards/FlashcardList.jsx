@@ -88,4 +88,4 @@ export default function FlashcardList({ flashcards }) {
         </div>
     </div>
     );
-}       
+}
