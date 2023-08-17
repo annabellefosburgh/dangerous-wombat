@@ -11,8 +11,12 @@ const NavBar = () => {
             <button className="pseudo" onClick={Auth.logout}>Logout</button>
         ) : (
         <div>
-          <button className="login psuedo" Link to='/login'>Login</button>
-          <button className="sign up psuedo"Link to='/signup'>Sign Up</button>
+          <button className="login psuedo"> 
+            <Link to='/login'>Login/</Link>
+          </button>
+          <button className="sign up psuedo"> 
+            <Link to='/signup'>Sign Up</Link>
+          </button>
         </div>
           )}
       </div>
