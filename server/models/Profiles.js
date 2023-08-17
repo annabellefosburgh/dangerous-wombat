@@ -5,15 +5,17 @@ const bcrypt = require('bcrypt');
 //Initializing a profile schema
 const profileSchema = new Schema({
     // changed 'name' to 'username'
-    _id: {
-      type: Number,
-      required: true
-    },
     username: {
       type: String,
       required: true,
       unique: true,
       trim: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      match: [/.+@.+\..+/, 'Must use a valid email address'],
     },
     password: {
       type: String,
@@ -25,9 +27,6 @@ const profileSchema = new Schema({
       default: 0,
     },
 });
-
-  //Implementing auto-increment feature for profile id
-  profileSchema.plugin(autoIncrement.plugin, {model: 'Profile', field: '_id' });
 
   //Pre-save middleware to create a password
   profileSchema.pre('save', async function (next) {
