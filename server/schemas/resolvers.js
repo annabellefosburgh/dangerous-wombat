@@ -37,19 +37,25 @@ const resolvers = {
         // creates a user with username, email, password and assigns a token to that user
         addProfile: async (parent, { username, email, password }) => {
             try {
+              console.log("Username3:", username);
               const existingUser = await User.findOne({ username });
+              console.log("Existing user:", existingUser)
               if (existingUser) {
                 throw new Error('Username already exists!');
               }
-              
-              const user = await User.create({ username, email, password });
+              console.log("Username4:", username);
+              const user = await User.create({ username, name: username, email, password }).catch(result => {
+                console.log(result)
+
+              });
+
+              console.log("Created user1:", user)
               if (!user) {
                 throw new Error('Something is wrong!');
               }
               
               const token = signToken(user);
-              
-              console.log("Created user:", user);
+            
               
               return { token, user };
             } catch (error) {

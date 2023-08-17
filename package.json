@@ -20,7 +20,7 @@
         "vite": "^4.4.9"
     },
     "dependencies": {
-        "@apollo/client": "^3.8.1",
+        "@apollo/client": "^3.7.14",
         "@apollo/server": "^4.9.1",
         "@vitejs/plugin-react": "^4.0.4",
         "bcrypt": "^5.1.0",
