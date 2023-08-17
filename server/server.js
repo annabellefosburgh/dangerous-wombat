@@ -42,11 +42,11 @@ const startApolloServer = async () => {
   });
 };
 
-// Connect Mongoose to DB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/tech-prep-pro', {
+// Connect Mongoose to DB - Update the connection string here
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://finalproject:2023@cluster0.jyn26uz.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
 // Call the async function to start the server
-  startApolloServer();
+startApolloServer();
