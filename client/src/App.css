@@ -274,6 +274,22 @@ li {
     margin: 15px;
 }
 
+.navbox-login {
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    background-color: #362b2b;
+    margin: 15px;
+}
+
+.navbox-signup {
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    background-color: #362b2b;
+    margin: 15px;
+}
+
 /* Login and signup container styling */
 .card-header {
     background-color: var(--parchment);
