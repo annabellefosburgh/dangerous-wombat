@@ -329,13 +329,30 @@ li {
 }
 
 .question-container {
+    height: 400px;
+    width: 900px;
+    margin: 30px;
+    display: block;
+    text-align: start;
     background-color: var(--airblue);
     color: var(--parchment);
 }
 
-.next-question {
-    background-color:var(--huntergreen);
-    color: var(--timber);
+.question {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.next-question, .back-btn {
+    display: flex;
+    align-self: center;
+    background-color:var(--timber);
+    color: var(--vandyke);
+}
+
+.btns {
+    display: flex;
+    justify-content: space-around;
 }
 
 .score-results {

@@ -14,7 +14,7 @@ const Home = () => {
           <a className="linktext" href="/quizzes">Mock Tests</a>
           </div>
           <div className="navbox-podcasts">
-          <a className="linktext" href="/podcasts">Podcast Resources</a>
+          <a className="linktext" href="/podcast">Podcast Resources</a>
           </div>
           </div>
       </main>

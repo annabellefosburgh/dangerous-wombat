@@ -8,6 +8,10 @@ import Quizzes from './pages/Quizzes.jsx'
 import Podcasts from './pages/Podcasts.jsx';
 import Signup from './pages/Signup.jsx';
 import Login from './pages/Login.jsx';
+import Quiz1 from './components/Quizzes/quiz1.jsx'
+import Quiz2 from './components/Quizzes/quiz2.jsx'
+import Quiz3 from './components/Quizzes/quiz3.jsx'
+import Quiz4 from './components/Quizzes/quiz4.jsx'
 
 // create browser router to handle page redirection
 const router = createBrowserRouter([
@@ -31,7 +35,19 @@ const router = createBrowserRouter([
       }, {
         path: '/quizzes',
         element: <Quizzes />
-      }, {
+      },  {
+        path: '/quiz1',
+        element: <Quiz1 />
+      },  {
+        path: '/quiz2',
+        element: <Quiz2 />
+      },  {
+        path: '/quiz3',
+        element: <Quiz3 />
+      },  {
+        path: '/quiz4',
+        element: <Quiz4 />
+      },   {
         path: '/podcasts',
         element: <Podcasts />
       }

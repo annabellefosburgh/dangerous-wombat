@@ -62,37 +62,40 @@ const Quiz1 = () => {
 
     return (
         <div className="quiz-container">
-        <div className="show-score">
-            {showScore ? (
-                <div className='score-results'>
-                    <h2>Quiz Complete!</h2>
-                    <h3>Your Score: {score}</h3>
-                </div>
-            ) : (
-                <div className="question-container">
-                    <h2>Question {currentQuestion + 1}</h2>
-                    <h3>{questions[currentQuestion].question}</h3>
-                    {questions[currentQuestion].type === 'radio' && (
-                        <ul>
-                            {questions[currentQuestion].options.map((option, index) => (
-                                <li key={index}>
-                                    <input
-                                        type="radio"
-                                        name={`question${currentQuestion}`}
-                                        value={option}
-                                        onChange={() =>
-                                            handleAnswerSelection(currentQuestion, option)
-                                        }
-                                    />
-                                    {option}
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                    <button className="next-question" onClick={handleNextQuestion}>Next Question</button>
-                </div>
-            )}
-        </div>
+            <div className="show-score">
+                {showScore ? (
+                    <div className='score-results'>
+                        <h2>Quiz Complete!</h2>
+                        <h3>Your Score: {score}</h3>
+                    </div>
+                ) : (
+                    <div className="question-container">
+                        <h2 className="question">Question {currentQuestion + 1}</h2>
+                        <h3 className="question">{questions[currentQuestion].question}</h3>
+                        {questions[currentQuestion].type === 'radio' && (
+                            <ul>
+                                {questions[currentQuestion].options.map((option, index) => (
+                                    <div key={index}>
+                                        <input
+                                            type="radio"
+                                            name={`question${currentQuestion}`}
+                                            value={option}
+                                            onChange={() =>
+                                                handleAnswerSelection(currentQuestion, option)
+                                            }
+                                        />
+                                        <span className="checkable">{option}</span>
+                                    </div>
+                                ))}
+                            </ul>
+                        )}
+                        <div className="btns">
+                            <button className="back-btn" Link to="/quzzes">Go Back</button>
+                            <button className="next-question" onClick={handleNextQuestion}>Next Question</button>
+                        </div>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

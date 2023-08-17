@@ -13,22 +13,22 @@ const Quizzes = (props) => {
             <div className="link-containers">
                 <div className="indv-quiz1">
                     <p>
-                        <Link to="../components/Quizzes/quiz1" className="linktext"> Quiz 1: Coding Basics </Link>
+                        <Link to="/quiz1" className="linktext"> Quiz 1: Coding Basics </Link>
                     </p>
                 </div>
                 <div className="indv-quiz2">
                     <p >
-                        <Link to="../components/Quizzes/quiz2" className="linktext"> Quiz 2: Debugging </Link>
+                        <Link to="/quiz2" className="linktext"> Quiz 2: Debugging </Link>
                     </p>
                 </div>
                 <div className="indv-quiz3">
                     <p>
-                        <Link to="../components/Quizzes/quiz3" className="linktext"> Quiz 3: Databases </Link>
+                        <Link to="/quiz3" className="linktext"> Quiz 3: Databases </Link>
                     </p>
                 </div>
                 <div className="indv-quiz4">
                     <p>
-                        <Link to="../components/Quizzes/quiz4" className="linktext"> Quiz 4: Full Stack Misc </Link>
+                        <Link to="/quiz4" className="linktext"> Quiz 4: Full Stack Misc </Link>
                     </p>
                 </div>
             </div>
