@@ -43,14 +43,10 @@ const startApolloServer = async () => {
 };
 
 // Connect Mongoose to DB
-var MONGODB_URI = process.env.MONGODB_URL || "mongodb://localhost/tech-prep-pro";
-const options = {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/tech-prep-pro', {
   useNewUrlParser: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-  family: 4
-};
-mongoose.connect(MONGODB_URI,options)
+  useUnifiedTopology: true
+});
 
 // Call the async function to start the server
   startApolloServer();
