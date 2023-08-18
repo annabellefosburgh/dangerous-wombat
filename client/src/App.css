@@ -289,6 +289,14 @@ li {
 }
 
 /* Login and signup container styling */
+.signup-section {
+    margin: 30px;
+}
+
+.login-section {
+    margin: 30px;
+}
+
 .card-header {
     background-color: var(--parchment);
     color: var(--airblue);

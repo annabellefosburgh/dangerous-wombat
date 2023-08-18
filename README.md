@@ -17,7 +17,7 @@ TechPrep Pro is tailored for new developers preparing to excel in technical inte
 [11. License](#license)  
 
 ## Application Screenshots
-![PLACEHOLDER: Screenshot of application]()
+![Screenshot of application](client/assets/techprep-pro-screenshot.png)
 
 ## Application Link
 [Application Link](https://techprep-client-a7f9715bc023.herokuapp.com/)
