@@ -63,5 +63,3 @@ typings/
 .DS_Store
 .vscode
 *.xslx
-config
-.connection.js
