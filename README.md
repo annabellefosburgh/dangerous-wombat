@@ -21,7 +21,7 @@ TechPrep Pro is tailored for new developers preparing to excel in technical inte
 <img width="327" alt="Screen Shot 2023-08-17 at 8 35 46 AM" src="https://github.com/annabellefosburgh/dangerous-wombat/assets/124208861/b44bb79f-a3c7-41c7-8902-af4bc8b41ebb">
 
 ## Application Link
-[Application Link](https://techprep-client-a7f9715bc023.herokuapp.com/)
+[Application Link](https://techprep-pro-4b8ef967b7cd.herokuapp.com/)
 
 ## Repository
 [GitHub Repository](https://github.com/annabellefosburgh/dangerous-wombat)
