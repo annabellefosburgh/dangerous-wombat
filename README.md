@@ -33,7 +33,7 @@ TechPrep Pro is tailored for new developers preparing to excel in technical inte
 * Podcasts: Enhance your preparation by listening to informative podcasts from industry professionals.
 
 ## Installation
-Clone the starter code and initialize the program by running an ``` npm install ```. Start the server by running ``` npm start develop ``` and clicking on the link to your local host.
+Clone the starter code and initialize the program by running an ``` npm install ```. Start the server and application by running ``` npm run develop ```.
 
 ## Technologies Used
 * react-dom
@@ -46,6 +46,7 @@ Clone the starter code and initialize the program by running an ``` npm install 
 * @apollo/server
 * [Picnic CSS](https://picnicss.com/)
 * [Listen Notes Pocast API](https://www.listennotes.com/api/)
+* dotenv
 
 ## Contributors
 * [Peyton Tranel](https://github.com/pjt3232)
