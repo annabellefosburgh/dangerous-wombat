@@ -34,7 +34,7 @@ const resolvers = {
       
             return { token, user };
           },
-        // creates a user with username, email, password and assigns a token to that user
+        // reates a user with username, email, password and assigns a token to that user
         addProfile: async (parent, { username, email, password }) => {
             try {
               console.log("Username3:", username);
@@ -67,7 +67,7 @@ const resolvers = {
               throw error;
             }
           },
-        // updates the user's previous score
+        // Updates the user's previous score
         updatePreviousScore: async (parent, { email, previousScore }, context) => {
             if (context.user) {
                 const user = await User.findOneAndUpdate(
