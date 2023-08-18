@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 function PodcastInfo({ podcastIds, episodeIds }) {
-    const API_KEY = '1c9247616fa64c7083f70675522e1fee';
+    const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
     const [podcastData, setPodcastData] = useState(null);
     const [episodeData, setEpisodeData] = useState(null);
 
