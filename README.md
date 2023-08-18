@@ -17,7 +17,8 @@ TechPrep Pro is tailored for new developers preparing to excel in technical inte
 [11. License](#license)  
 
 ## Application Screenshots
-![Screenshot of application](client/assets/techprep-pro-screenshot.png)
+<img width="1437" alt="Screen Shot 2023-08-17 at 8 36 39 AM" src="https://github.com/annabellefosburgh/dangerous-wombat/assets/124208861/25d1bc8a-8ea3-4cac-b9d4-efaf4c2be105">
+<img width="327" alt="Screen Shot 2023-08-17 at 8 35 46 AM" src="https://github.com/annabellefosburgh/dangerous-wombat/assets/124208861/b44bb79f-a3c7-41c7-8902-af4bc8b41ebb">
 
 ## Application Link
 [Application Link](https://techprep-client-a7f9715bc023.herokuapp.com/)
